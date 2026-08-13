@@ -1,6 +1,6 @@
 # DeepSeek Harness 桌面版
 
-把 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness) 的 Web 界面封装成 Windows 桌面程序（Electron 壳）。开箱即用：自带便携 Node 运行时与 DeepSeek 鲸鱼图标，目标机器无需预装 Node；默认与官方命令行版共享同一份数据目录。
+把 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness) 的 Web 界面封装成 Windows 桌面程序（Electron 壳）。开箱即用：自带便携 Node 运行时，目标机器无需预装 Node；默认与官方命令行版共享同一份数据目录。
 
 ## 特性
 
