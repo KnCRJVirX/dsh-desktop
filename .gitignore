@@ -3,3 +3,5 @@ dist/
 vendor/
 build/
 *.log
+
+package-lock.json

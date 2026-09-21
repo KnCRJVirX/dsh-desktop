@@ -3,6 +3,7 @@
 const { app, BrowserWindow, dialog, shell } = require('electron');
 const path = require('node:path');
 const { startServer } = require('./lib/server');
+const { choosePort, savePort } = require('./lib/port');
 
 let mainWindow = null;
 let server = null;
@@ -62,7 +63,22 @@ async function boot() {
   // (~/.dsh) — identical to running `dsh web` directly. This keeps config,
   // MCP, plugins, sessions, settings and credentials in sync with the CLI.
   const dshHome = process.env.DSH_HOME || undefined;
-  server = await startServer({ dshHome, host: '127.0.0.1', port: 0 });
+
+  // Prefer a stable port so the DSH system prompt (which embeds the URL) stays
+  // identical across restarts, preserving LLM prompt caches for continued
+  // sessions. Fall back to an OS-assigned port only when preferred ports are
+  // taken.
+  const dataDir = app.getPath('userData');
+  const port = await choosePort(dataDir);
+  try {
+    server = await startServer({ dshHome, host: '127.0.0.1', port });
+  } catch (error) {
+    if (port === 0) throw error;
+    console.warn(`[dsh-desktop] preferred port ${port} became unavailable, falling back to an OS-assigned port`);
+    server = await startServer({ dshHome, host: '127.0.0.1', port: 0 });
+  }
+  savePort(dataDir, server.url);
+
   console.log(`[dsh-desktop] DSH web server ready at ${server.url}${dshHome ? ` (home: ${dshHome})` : ' (home: default ~/.dsh)'}`);
   await createWindow(server.url);
 }
