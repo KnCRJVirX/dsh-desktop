@@ -1,7 +1,7 @@
 # DeepSeek Harness 桌面版（dsh-desktop）
 
 > [!IMPORTANT]
-> **本项目已归档（Archived），不再维护。** DeepSeek 官方已发布桌面端（`v0.2.0-rc.x` 预览版），本社区封装随之停止更新；仓库转为**只读**，不再接受 issue、PR 与版本更新。
+> **本项目已归档（Archived），不再维护。** DeepSeek 官方已发布桌面端，本社区封装随之停止更新；仓库转为**只读**，不再接受 issue、PR 与版本更新。
 >
 > - 最终版本：**v0.1.9**（封装官方 `@deepseek-ai/dsh@0.1.7-rc.1`）
 > - 请改用官方桌面端 —— 官方项目：<https://github.com/deepseek-ai/deepseek-harness>，官方站点：<https://deepseek.com/harness>
