@@ -1,5 +1,14 @@
 # DeepSeek Harness 桌面版（dsh-desktop）
 
+> [!IMPORTANT]
+> **本项目已归档（Archived），不再维护。** DeepSeek 官方已发布桌面端（`v0.2.0-rc.x` 预览版），本社区封装随之停止更新；仓库转为**只读**，不再接受 issue、PR 与版本更新。
+>
+> - 最终版本：**v0.1.9**（封装官方 `@deepseek-ai/dsh@0.1.7-rc.1`）
+> - 请改用官方桌面端 —— 官方项目：<https://github.com/deepseek-ai/deepseek-harness>，官方站点：<https://deepseek.com/harness>
+> - 本仓库代码与提交历史完整保留，[Releases](https://github.com/KnCRJVirX/dsh-desktop/releases) 中的旧安装包仍可下载使用；但上游已进入 `0.2.x`，本封装不会再跟进功能与安全修复。
+>
+> 以下文档保留归档时的原貌，**仅作技术记录**，其中的安装包与升级路径均已停止维护。
+
 把 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness) 的 Web 界面封装成 Windows 桌面程序（Electron 壳）。
 
 自带便携 Node 运行时，目标机器**无需预装 Node.js**；默认与官方命令行版**共享同一份数据目录**（配置、MCP、插件、会话、凭据）。
@@ -20,6 +29,8 @@
 从本仓库的 **Releases** 页面下载最新安装包：
 
 - `DeepSeek Harness Setup <版本>.exe` —— NSIS 安装程序，安装后双击启动。
+
+> **已归档**：本仓库最后一次发布为 `0.1.8`。新用户请直接使用**官方桌面端**（<https://deepseek.com/harness>），本封装已停止维护。
 
 **环境要求**：Windows 10 / 11（x64）。
 
